@@ -9,7 +9,7 @@ public class EndGoal : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            ScoreManager.Instance.SaveFinalScore();
+            GameManager.Instance.SaveFinalScore();
             SceneManager.LoadScene(nextScene);
         }
     }

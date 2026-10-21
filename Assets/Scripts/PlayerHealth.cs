@@ -34,6 +34,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void RestartLevel()
     {
+        GameManager.Instance.ResetScore();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

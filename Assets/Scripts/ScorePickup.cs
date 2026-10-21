@@ -6,14 +6,14 @@ using UnityEngine;
 public class ScorePickup : MonoBehaviour
 {
     // How many points this coin is worth (change it in the Inspector)
-[SerializeField] private int points = 10;
+[SerializeField] private int points = 50;
 
 private void OnTriggerEnter(Collider other)
 {
     if (other.CompareTag("Player"))
     {
         float multiplier = other.GetComponent<PlayerPowerUps>().ScoreMultiplier;
-        ScoreManager.Instance.AddScore(Mathf.RoundToInt(points * multiplier));
+        GameManager.Instance.AddScore(Mathf.RoundToInt(points * multiplier));
 
         Destroy(gameObject);
     }

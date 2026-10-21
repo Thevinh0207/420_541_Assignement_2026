@@ -10,9 +10,7 @@ public class LevelEndTrigger : MonoBehaviour
         // Only the player can finish the level
         if (!other.CompareTag("Player")) return;
  
-        // Save the score BEFORE loading: the ScoreManager is about
-        // to be destroyed together with the rest of SampleScene
-        ScoreManager.Instance.SaveFinalScore();
+        GameManager.Instance.SaveFinalScore();
  
         SceneManager.LoadScene(endSceneName);
     }
